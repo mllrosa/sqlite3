@@ -1,5 +1,0 @@
-'Dell' 2026, 'TechCorp', '100 unidades', 5000
-
-'Lenovo', 2027, 'Global Supply', '50 caixas', 4500
-
-'HP', 2025, 'Prime Distributors', '200 peças', 6000
