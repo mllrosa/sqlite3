@@ -17,6 +17,6 @@ print(cursor.fetchall())
 linha()
 
 # Exiba os produtos cujo preço unitário seja maior que 50.
-cursor.execute("SELECT produtos FROM vendas WHERE preco_unitario >50 ")
+cursor.execute("SELECT produto FROM vendas WHERE preco_unitario >50 ")
 print(cursor.fetchall())
 linha()
