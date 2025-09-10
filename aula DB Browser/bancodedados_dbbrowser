@@ -9,7 +9,7 @@ CREATE TABLE matriculas (
     situacao TEXT NOT NULL
 );
 
--- id, nome_curso, carga_horaria, sala, professor, nivel
+-- id, nome_curso, carga_horaria, sala, educador, nivel
 CREATE TABLE cursos (
     id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
     nome_curso TEXT NOT NULL,
@@ -55,8 +55,8 @@ INSERT INTO matriculas (polo, preco, data_matricula, situacao) VALUES
 ('Tulipa', 1800, '14/02/2024', 'ativa');
 
 
--- CURSOS - id, nome_curso, carga_horaria, sala, professor, nivel
-INSERT INTO cursos (nome_curso, carga_horaria, sala, professor, nivel) VALUES
+-- CURSOS - id, nome_curso, carga_horaria, sala, educador, nivel
+INSERT INTO cursos (nome_curso, carga_horaria, sala, educador, nivel) VALUES
 ('Desenvolvimento Web', 80, 'Sala 101', 'Ana Lima', 'Intermediário'),
 ('Ciência de Dados', 45, 'Sala 102', 'Carlos Souza', 'Iniciante'),
 ('Segurança da Informação', 60, 'Sala 103', 'Fernanda Alves', 'Avançado'),
