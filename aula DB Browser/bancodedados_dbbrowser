@@ -11,11 +11,12 @@ CREATE TABLE matriculas (
 
 -- id, nome_curso, carga_horaria, sala, educador, nivel
 CREATE TABLE cursos (
+    ('Desenvolvimento Mobile', 80, 'Sala 105', 'Marina Duarte', 'Intermediário'),
     id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
     nome_curso TEXT NOT NULL,
     carga_horaria INTEGER NOT NULL,
     sala TEXT NOT NULL,
-    professor TEXT NOT NULL,
+    educador TEXT NOT NULL,
     nivel TEXT NOT NULL
 );
 
