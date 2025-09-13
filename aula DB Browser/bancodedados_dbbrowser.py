@@ -1,6 +1,6 @@
 
--- 📝 Cria tabelas    --------------------------------------------
--- id, polo, curso, preco, data_matricula, situacao
+# -- 📝 Cria tabelas    --------------------------------------------
+# -- id, polo, preco, data_matricula, situacao
 CREATE TABLE matriculas (
     id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
     polo TEXT NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE matriculas (
     situacao TEXT NOT NULL
 );
 
--- id, nome_curso, carga_horaria, sala, educador, nivel
+# -- id, nome_curso, carga_horaria, sala, educador, nivel
 CREATE TABLE cursos (
     id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
     nome_curso TEXT NOT NULL,
@@ -20,8 +20,8 @@ CREATE TABLE cursos (
 );
 
 
--- 📝 Inserção de Dados    ------------------------------------------
--- MATRICULAS - id, polo, curso, preco, data_matricula, situacao
+# -- 📝 Inserção de Dados    ------------------------------------------
+# -- MATRICULAS - id, polo, curso, preco, data_matricula, situacao
 INSERT INTO matriculas (polo, preco, data_matricula, situacao) VALUES
 ('Rosa', 2500, '15/01/2024', 'ativa'),
 ('Girassol', 1800, '10/02/2024', 'concluída'),
@@ -55,7 +55,7 @@ INSERT INTO matriculas (polo, preco, data_matricula, situacao) VALUES
 ('Tulipa', 1800, '14/02/2024', 'ativa');
 
 
--- CURSOS - id, nome_curso, carga_horaria, sala, educador, nivel
+# -- CURSOS - id, nome_curso, carga_horaria, sala, educador, nivel
 INSERT INTO cursos (nome_curso, carga_horaria, sala, educador, nivel) VALUES
 ('Desenvolvimento Web', 80, 'Sala 101', 'Ana Lima', 'Intermediário'),
 ('Ciência de Dados', 45, 'Sala 102', 'Carlos Souza', 'Iniciante'),
@@ -88,42 +88,102 @@ INSERT INTO cursos (nome_curso, carga_horaria, sala, educador, nivel) VALUES
 ('Flutter para Mobile', 80, 'Sala 129', 'Vitor Ribeiro', 'Intermediário'),
 ('Python Intermediário', 45, 'Sala 130', 'Aline Moraes', 'Intermediário');
 
--- AA -----------------------------------------------------------------------------------
--- Para adicionar somente uma coluna na tabela
+
+# -- AA ----------------------------------------------------------------------------------
+# -- Para adicionar somente uma coluna na tabela
 ALTER TABLE cursos ADD COLUMN preco REAL;
 
--- Depois pra prencher só uma coluna  com valores aleatorios de 800 à 1600
-UPDATE cursos SET preco = ABS(RANDOM() % 801) + 800; -- ABS = valor absoluto
+# -- Depois pra prencher só uma coluna  com valores aleatorios de 800 à 1600
+UPDATE cursos SET preco = ABS(RANDOM() % 801) + 800; # ABS = valor absoluto
 
--- Para mudar só uma linha de uma culona é necessario especificar com WHERE
-UPDATE cursos SET preco = ABS(RANDOM() % 801) + 800 WHERE preco IS NULL OR preco  0 ';
------------------------------------------------------------------------------------------
+# -- Para mudar só uma linha de uma culona é necessario especificar com WHERE
+UPDATE cursos SET preco = ABS(RANDOM() % 801) + 800 WHERE preco IS NULL OR preco IS  0;
+# o IS pode ser substituido por =
 
--- 🔍 Etapa 3 – Consultas com SELECT
--- Listar todos os cursos com carga horária maior que 40 horas, ordenados pela carga horária
+# Para deixar em tres situacoes especificas como a dos polos/ nao deu certo :(
+UPDATE matriculas SET polo = RANDOM('Rosa', 'Tulipa', 'Girasol');
+# -----------------------------------------------------------------------------------------
+
+
+
+
+
+# ----------------------------------------
+# -- 🔍 Etapa 3 - Consultas com SELECT
+# -- Listar todos os cursos com carga horária maior que 40 horas, ordenados pela carga horária
 SELECT nome_curso, carga_horaria FROM cursos WHERE carga_horaria > 40 ORDER BY carga_horaria;
 
--- -- Mostrar os alunos e os cursos em que estão matriculados (JOIN).
--- -- Mostrar a quantidade de alunos matriculados em cada curso.
+# -- Mostrar os alunos e os cursos em que estão matriculados (JOIN).
+# -- Mostrar a quantidade de alunos matriculados em cada curso.
 
 
--- ✏️ Etapa 4 – UPDATE
--- Aumentar em 10% o preço dos cursos com mais de 80 horas.
+
+# ----------------------------------------
+# -- ✏️ Etapa 4 - UPDATE
+# -- Aumentar em 10% o preço dos cursos com mais de 80 horas.
 UPDATE cursos SET preco = preco * 1.1 WHERE carga_horaria > 80;
 
--- Atualizar a cidade do professor "João da Silva" para "Rio de Janeiro".
+# -- Atualizar a cidade do professor "João da Silva" para "Rio de Janeiro"
 
 
--- 🗑️ Etapa 5 – DELETE
--- Apagar o aluno de id = 15 (e suas matrículas).
--- Remover todos os cursos com preço menor que R$200,00
-DELETE FROM cursos WHERE preco < 200; -- Nao precisa  do * na vdd da erro se colocar 
 
 
--- ➕ Etapa 6 – INSERT Extra
--- Inserir um novo curso chamado "Inteligência Artificial", 60 horas, R$1200.
+# ----------------------------------------
+# -- 🗑️ Etapa 5 - DELETE
+# -- Apagar o aluno de id = 15 (e suas matrículas).
+# -- Remover todos os cursos com preço menor que R$200,00
+DELETE FROM cursos WHERE preco < 200; # Nao precisa  do * na vdd da erro se colocar 
+
+
+
+# ----------------------------------------
+# -- ✏️ Etapa 6 - INSERT Extra
+# -- Inserir um novo curso chamado "Inteligência Artificial", 60 horas, R$1200.
 INSERT INTO cursos (nome_curso, carga_horaria, sala, educador, nivel) VALUES
 ('Inteligência Artificial', 60, 'Sala 101', 'Ana Lima', 'Intermediário', 1000);
 
--- 📊 Etapa 7 – Relatório Final
--- Liste os 5 cursos mais caros e mostre quantos alunos estão matriculados em cada um:
+
+
+# ----------------------------------------
+# -- 📊 Etapa 7 - Relatório Final
+# -- Liste os 5 cursos mais caros e mostre quantos alunos estão matriculados em cada um:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -- mostrar, para cada curso, o preço do curso e os preços das matrículas associadas (JOIN).
+
